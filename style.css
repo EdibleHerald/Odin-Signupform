@@ -1,0 +1,90 @@
+:root{
+    --font: 'Courier New', Courier, monospace ;
+    --h1-font-size: 5vw;
+    --font-size:1.5vw;
+    --odin-width: clamp(15%, 25%, 40%);
+    --odin-height: clamp(15%, 25%, 40%);
+}
+
+@font-face {
+    font-family: "Norse Bold";
+    src: url("./Norse-Bold.otf");
+}
+
+
+.body-ParentDiv{
+    display:flex;
+    flex: 1 1 auto ;
+    flex-direction: row;
+    min-width:100vw;
+    min-height:100vh;
+    margin:0;
+}
+
+/* Image Sidebar */
+
+.image-sidebar{
+    display:flex;
+    position:relative;
+    min-width:35%;
+    min-height:90%;
+    border: solid red 5px;
+    margin:0;
+
+    justify-content: center;
+}
+.image-sidebar img{
+    display:flex;
+    position:relative;
+    width:100%;
+    height:100%;
+    
+}
+
+.image-sidebar div{
+    display: flex;
+    position:absolute;
+    width:100%;
+    max-height:30%;
+    justify-content: center;
+
+    background-color: rgba(0,0,0, 0.4) ;
+}
+
+.image-sidebar .image-textoverlay{
+    top:30%;
+}
+#odin-image{
+    width:var(--odin-width);
+    height: var(--odin-height);
+    
+}
+.image-sidebar div h1{
+    position:relative;
+    font-family:"Norse Bold";
+    font-size: var(--h1-font-size);
+    color:white;
+    justify-self: center;
+}
+
+.image-sidebar .image-linkdiv {
+    color:white;
+    position: absolute;
+    font-size: var(--font-size);
+    top:90%;
+}
+
+.image-link:link, .image-link:visited{
+    color:lightblue;
+}
+
+/* Login Sidebar */
+.login-page{
+    display:flex;
+
+    min-width:65%;
+    min-height: 90%;
+    border: solid blue 5px;
+    margin:0;
+
+}
