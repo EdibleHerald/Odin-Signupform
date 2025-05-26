@@ -1,14 +1,16 @@
 :root{
     --font: 'Courier New', Courier, monospace ;
     --h1-font-size: 5vw;
-    --font-size:1.5vw;
+    --font-size:clamp(1.25vw,1.75vw,3.5vw);
+    --h3-font-size:clamp(1vw,2.5vw,3.5vw);
     --odin-width: clamp(15%, 25%, 40%);
     --odin-height: clamp(15%, 25%, 40%);
 }
 
-*{
+*,*::before,*::after{
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 @font-face {
@@ -21,7 +23,6 @@
     flex-direction: row;
     width:100vw;
     height:100vh;
-    
 }
 
 /* Image Sidebar */
@@ -90,19 +91,19 @@
     flex-direction: column;
     box-sizing: border-box;
 
-    min-width:65%;
-    min-height: 90%;
-    border: solid blue 5px;
-    margin:0;
+    max-width:65%;
+    max-height: 100%;
+    margin:0 auto;
 
 }
 
 .form-container{
-    margin:auto;
+    margin:0 auto;
     background-color: antiquewhite;
-    height:40%;
+    height:60%;
     width:100%;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .form-container p{
@@ -113,45 +114,102 @@
 .form{
     display:flex;
     flex-direction: row;
-    flex: 1;
+    flex: 0;
     flex-wrap: wrap;
 
-    padding:0;
-    margin:5%;
     width: 100%;
     height:90%;
-    justify-content: space-between;
-    align-items:space-between;
+    box-sizing: border-box;
+    justify-content: center;
     
 }
 
-.form div{
+.form .textdiv{
     display:flex;
     flex-direction: column;
+    align-items: center;
     width:40%;
-    height:auto;
+    height:20%;
+    
 
 }
 
-.form div label, .form div input{
+.textdiv label, .textdiv input{
     font-family: var(--font);
     font-size: var(--font-size);
     width:80%;
 
 }
 
+.textdiv input{
+    border: 10%;
+}
+
+input:focus{
+    border-radius:5px;
+    outline: 0.25vw solid blue;
+    box-shadow: 5px 10px grey;
+}
+
+input:invalid{
+    border-color:red;
+}
+input:valid:not(:placeholder-shown){
+    border-color:green;
+}
 
 .form-container h3{
     width:100%;
     height:10%;
-    font-size: 3vw;
+    font-size: var(--h3-font-size);
+    padding-bottom:5%;
 }
 
 .p-desc{
-    margin:auto;
     font-family: var(--font);
-    font-size: 3vw;
+    font-size: var(--font-size);
     width:85%;
+    height:25%;
+    justify-self: center;
+    align-self: center;
+    margin:auto;
+    
+    align-content: center;
+}
+
+.checkbox{
+    display:flex;
+    padding:3%;
+    max-width:50%;
+    height:auto;
+    justify-self: left;
+    font-size:var(--font-size);
+    font-family:var(--font);
+    
+}
+
+.checkbox input{
+    width:25%;
+    height:25%;
+}
+
+.button{
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+#submitButton{
+    background-color: antiquewhite;
+    align-self: center;
+    width:30%;
+    height:fit-content;
+    border: 0.25vw solid black;
+    font-size: var(--font-size);
+}
+
+#submitButton:hover{
+    background-color: blue;
 }
 
 .spacer{
