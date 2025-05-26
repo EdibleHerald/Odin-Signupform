@@ -5,3 +5,5 @@ https://cdn.statically.io/gh/TheOdinProject/curriculum/afdbabfab03fbc34783c6b6f3
 
 
 This is a project from "The Odin Project". More about The Odin Project here: https://www.theodinproject.com/dashboard
+
+Here is the live preview! : https://edibleherald.github.io/Odin-Signupform/
